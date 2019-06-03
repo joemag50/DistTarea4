@@ -88,8 +88,8 @@ public class Server extends MainWindow
 					String ip = "" + s.getInetAddress();
 					String[] respuesta = nom.split(",");
 					server.clients.add(new Client(respuesta[0], respuesta[1], respuesta[2], respuesta[3]));
-					server.setLabelsText(server.clients);
 					server.orderClients();
+					server.setLabelsText(server.clients);
 					System.out.println(server.labels);
 					//server.labels.get(server.pc).setText(
 					//	String.format("%s %s %s %s", respuesta[0], respuesta[1], respuesta[2], respuesta[3])
