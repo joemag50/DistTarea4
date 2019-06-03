@@ -17,7 +17,11 @@ public class Client {
 	}
 	
 	public double getRam() {
-		return Double.parseDouble(ram.substring(0, -3));
+		return Double.parseDouble(ram.substring(0, ram.length() - 3));
+	}
+	
+	public double getCpu() {
+		return Double.parseDouble(cpu.substring(0, cpu.length() - 3));
 	}
 
 }

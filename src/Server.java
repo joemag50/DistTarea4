@@ -30,7 +30,7 @@ public class Server extends MainWindow
 		
 		//JCGE: Propiedades Particulares
 		labels = new ArrayList<MyLabel>();
-		MyLabel l_titulo = new MyLabel("CPU | RAM | SO | Version SO ");
+		MyLabel l_titulo = new MyLabel("CPU | RAM | SO | Version SO | Ancho de banda");
 		l_m1 = new MyLabel("-");
 		l_m2 = new MyLabel("-");
 		l_m3 = new MyLabel("-");
@@ -112,11 +112,11 @@ public class Server extends MainWindow
 	
 	public void setLabelsText(ArrayList<Client> clients) {
 		for (int i = 0; i < clients.size(); i++) {
-			labels.get(i).setText(clients.get(i).labelText());
+			labels.get(i).setText(clients.get(i).labelText() + " 10 Mbps");
 		}
 	}
 	
 	public void orderClients() {
-		clients.sort(comparing(Client::getRam));
+		clients.sort(comparing(Client::getCpu).thenComparing(Client::getRam));
 	}
 }
