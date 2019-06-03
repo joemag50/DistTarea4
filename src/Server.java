@@ -116,7 +116,16 @@ public class Server extends MainWindow
 	}
 	
 	public void orderClients() {
-		clients.sort(comparing(Client::getRam));
+        for(int i=0; i < clients.size(); i++){
+            for(int j=0; j < clients.size() - 1; j++){
+                Client client1 = clients.get(j);
+                Client client2 = clients.get(j+1);
+                if(client1.getRam() < client2.getRam()){
+                    Client temp = client1;
+                    client1 = client2;
+                    client2 = temp;
+                }
+            }
+        }
 	}
-
 }
