@@ -69,6 +69,7 @@ public class Server extends MainWindow
 		ServerSocket ss = new ServerSocket(5400);
 		Server server = new Server();
 		server.finGUI();
+		server.setSize(MainWindow.WIDTH.intValue(), MainWindow.HEIGHT.intValue());
 
 		while (true)
 		{
